@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Oops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Salary> l = new List<Salary>();
+             double x;
+
+            Salary a1 = new Salary(Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()));
+            Salary a2 = new Salary(Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()));
+            l.Add(a1);
+            l.Add(a2);
+            
+            for (int i = 0; i < 2; i++)
+            {
+                x = l[i].displaySalaryDetails();
+                Console.WriteLine(x);
+            }
+        }
+    }
+    class Salary
+    {
+        public double bs;
+        public double ta;
+        public double da;
+        public double hra;
+        
+        public Salary(double bs,double ta,double da=2000,double hra=3000)
+        {
+            this.bs = bs;
+            this.ta = ta;
+            this.da = da;
+            this.hra = hra;
+        }
+        public double displaySalaryDetails()
+        {
+            double s = bs + ta + da + hra;
+            return s;
+        }
+
+
+
+    }
+}
+

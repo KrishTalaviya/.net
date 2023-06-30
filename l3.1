@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Oops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Candidate> l = new List<Candidate>();
+
+            Candidate c1 = new Candidate();
+            Candidate c2 = new Candidate();
+            l.Add(c1);
+            l.Add(c2);
+            for (int i = 0; i < 2;i++ )
+            {
+                l[i].getCandidateDetails(Convert.ToInt64(Console.ReadLine()), Console.ReadLine(), Convert.ToInt64(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()));
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                l[i].displayCandidateDetails();
+            }
+        }
+    }
+    class Candidate
+    {
+        public long c_id;
+        public string c_name;
+        public long c_age;
+       public double c_weight;
+        public double c_hieght;
+        public void getCandidateDetails(long i, string n,long a,double w,double h)
+        {
+            c_id = i;
+            c_name = n;
+            c_age = a;
+            c_weight = w;
+            c_hieght = h;
+        }
+        public void displayCandidateDetails()
+        {
+            Console.WriteLine("displaying details");
+            Console.WriteLine(c_id);
+            Console.WriteLine(c_name);
+            Console.WriteLine(c_age);
+            Console.WriteLine(c_weight);
+            Console.WriteLine(c_hieght);
+        }
+  
+        
+
+    }
+}

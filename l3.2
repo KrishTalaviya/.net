@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Oops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<BankAccount> l = new List<BankAccount>();
+
+            BankAccount a1 = new BankAccount();
+            BankAccount a2 = new BankAccount();
+            l.Add(a1);
+            l.Add(a2);
+            for (int i = 0; i < 2; i++)
+            {
+                l[i].getCandidateDetails(Convert.ToInt64(Console.ReadLine()), Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Convert.ToDouble(Console.ReadLine()));
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                l[i].displayCandidateDetails();
+            }
+        }
+    }
+    class BankAccount
+    {
+        public long a_no;
+        public string a_email;
+        public string a_name;
+        public string a_type;
+        public double a_bal;
+        public void getCandidateDetails(long no, string e, string n, string t, double b)
+        {
+            a_no = no;
+            a_email = e;
+            a_name = n;
+            a_type = t;
+            a_bal = b;
+        }
+        public void displayCandidateDetails()
+        {
+            Console.WriteLine("displaying details");
+            Console.WriteLine(a_no);
+            Console.WriteLine(a_name);
+            Console.WriteLine(a_email);
+            Console.WriteLine(a_type);
+            Console.WriteLine(a_bal);
+        }
+
+
+
+    }
+}
